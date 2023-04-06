@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #000f1f;
+    scroll-behavior: smooth;
+    /*--side: 11%;*/
+    --side: 11%
+}
+
+.header{
+    width: 100%;
+    height: 100vh;
+    background-color: #000f1f;
+    padding-left: var(--side);
+    padding-right: 8%;
+    position: relative;
+}
+
+.top-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px 0 15px;
+    /*border-bottom: 1px solid #bababa;*/
+}
+
+.top-nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.top-nav ul li a{
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 15px;
+    transition: all .3s ease-out;
+}
+
+.top-nav ul li a:hover{
+    border-bottom: 3px solid #00aeaf;
+}
+
+.top-nav button{
+    background-color: #00aeaf;
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 30px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.side-nav{
+    position: fixed;
+    background-color: #000e4f;
+    left: 0;
+    top: 0;
+    width: 100px;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0;
+    background: linear-gradient(#000e4f, #406e6f);
+}
+
+.side-nav .logo{
+    width: 100px;
+}
+
+.side-nav a{
+    text-decoration: none;
+    color: #fff;
+    transform: rotate(-90deg) translateX(50%);
+    width: max-content;
+}
+
+.text-box{
+    margin-top: 20%;
+    font-size: 18px;
+    color: #fff;
+}
+
+.text-box h1{
+    font-weight: 500;
+    font-size: 86px;
+    line-height: 95px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+
+.main{
+    background-color: #000f1f;
+    padding-left: var(--side);
+    color: #fff;
+    scroll-behavior: smooth;
+}
+
+.main .slide{
+    position: relative;
+    min-height: 100vh;
+    padding-top: 30px;
+    scroll-behavior: smooth;
+}
+
+.main .slide a{
+    color: #00aeaf;
+    text-decoration: none;
+}
+
+.main .slide .go-top{
+    display: block;
+    text-align: right;
+    color: #00aeaf;
+}
+
+.hamburger-menu{
+    display: none;
+}
+
+.box{
+    display: flex;
+    margin: 30px 20px;
+}
+
+.box .contents{
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 10px 20px;
+    padding: 10px 20px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, .5);
+    border-radius: 15px;
+}
+
+.box .contents h2{
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.box .contents ul{
+    padding-left: 20px
+}
+
+.box .contents .icon{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+.user{
+    display: flex;
+}
+
+.box.member{
+    overflow-x: scroll;
+}
+.box.member::-webkit-scrollbar-thumb{
+    height: 5px;
+}
+
+.box .contents .user h2{
+    border: unset;
+    margin-top: 40px;
+    transform: translateY(-50%);
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-right: 20px;
+    border-right: 1px solid white;
+    white-space: nowrap;
+}
+
+.box .contents .user p{
+    margin-top: 40px;
+    transform: translateY(-50%);
+    white-space: nowrap;
+}
+
+.box .contents .profile{
+    margin: 5px 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #000e4f;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .5);
+}
+
+.nf-content{
+    display: block;
+    margin: 30px auto;
+}
+
+.nf-content table{
+    margin: auto;
+    border-radius: 5px;
+    border: 1px solid white;
+}
+.nf-content table tr th{
+    border-right: 1px solid white;
+}
+@media (max-width:500px) {
+    .side-nav{
+        display: none;
+    }
+    .top-nav{
+        display: initial;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        right: -100vw;
+        transition: all .5s ease-out;
+        background-color: #000e4f;
+        padding-left: 20px;
+        z-index: 1;
+    }
+
+    .top-nav ul li{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .top-nav ul li a{
+        font-size: 1.5em;
+    }
+
+    .top-nav.open{
+        transform: translateX(-100vw);
+    }
+
+    .top-nav button{
+        display: block;
+        position: relative;
+        left: -10px;
+        margin: 0 auto;
+    }
+
+    .hamburger-menu{
+        display: initial;
+        z-index: 2;
+    }
+
+    .menu-btn {
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        z-index: 90;
+        background-color: none;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: 3px;
+        width: 25px;
+        border-radius: 3px;
+        background-color: #ffffff;
+        position: absolute;
+    }
+    .menu-btn span:before {
+        bottom: 8px;
+    }
+    .menu-btn span:after {
+        top: 8px;
+    }
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+    }
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    #menu-btn-check {
+        display: none;
+    }
+
+    .slide-desc{
+        padding-left: var(--side);
+        width: calc(100% - var(--side));
+    }
+
+    .main{
+        padding: unset;
+    }
+
+    .box{
+        flex-direction: column;
+    }
+
+    .box .contents .user{
+        flex-direction: column;
+    }
+
+    .box .contents .user .icon{
+        display: block;
+        margin: auto;
+    }
+    .box .contents .user h2{
+        text-align: center;
+        padding: unset;
+        border: unset;
+    }
+    .box .contents .user p{
+        margin: unset;
+        text-align: center;
+    }
+    .block{
+        margin: 20px 0;
+        padding-left: 11%;
+    }
+    .box.member{
+        overflow-x: initial;
+    }
+}
+
+/*Scrollbar*/
+body::-webkit-scrollbar {
+    width: 1px;
+}
+body::-webkit-scrollbar-track {
+    background-color: darkgrey;
+}
+body::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}

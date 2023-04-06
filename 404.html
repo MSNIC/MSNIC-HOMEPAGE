@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSNIC</title>
+    <link rel="stylesheet" href="/core/resource/css/index.css?<?php echo(date('YmdHis'));?>">
+</head>
+<body>
+    <div class="header">
+        <div class="hamburger-menu">
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="/"><img src="/core/resource/image/MSNIC/darkMode/LOGOTYPE-d.png" alt="" style="width: 100px;"></a></li>
+                <li><a href="#" class="anchor">Home</a></li>
+                <li><a href="#projects" class="anchor">Projects</a></li>
+                <li><a href="#members" class="anchor">Members</a></li>
+                <li><a href="#" class="anchor">About</a></li>
+                <li><a href="/recruit">Recruit</a></li>
+            </ul>
+            <button>Contact Us</button>
+        </div>
+        <!--
+        <div class="side-nav">
+            <img src="/core/resource/image/MSNIC/ICON.svg" alt="MSNIC" class="logo">
+        </div>
+        -->
+        <div class="text-box">
+            <p>ページが見つかりませんでした。</p>
+            <h1>404 Not found</h1>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('menu-btn-check').onchange = ()=>{
+            $('.top-nav').toggleClass('open');
+        }
+
+        function sleep(waitSec, callbackFunc) {
+            var spanedSec = 0;
+            var id = setInterval(function () {
+                spanedSec = spanedSec + .1;
+                if (spanedSec >= waitSec) {
+                    clearInterval(id);
+                    if (callbackFunc) callbackFunc();
+                }
+            }, 100);
+        }
+
+        $('.anchor').on('click',()=>{
+            sleep(.1,()=>{window.history.replaceState({},null,'/');})
+        });
+
+    </script>
+</body>
+</html>

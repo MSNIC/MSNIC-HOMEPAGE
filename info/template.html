@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ja-jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSNIC</title>
+    <link rel="stylesheet" href="/core/resource/css/index.css?<?php echo(date('YmdHis'));?>">
+    <meta name="og:url" content="https://msnic.jp/info/00000.html">
+    <meta name="og:title" content="タイトル | MSNIC">
+    <meta name="og:description" content="詳細">
+    <meta name="og:type" content="article">
+    <meta name="twitter:card" content="summary"/>
+</head>
+<body>
+    <style>
+        .slide h2{
+            margin: 20px 0;
+            padding: 0 0 0 20px;
+            border-left: 5px solid white;
+        }
+        .slide{
+            padding-right: 11%;
+        }
+        @media (max-width:500px) {
+            .slide{
+                padding-left: 11%;
+            }
+        }
+    </style>
+    <div class="header" style="height: unset;">
+        <div class="hamburger-menu">
+            <input type="checkbox" id="menu-btn-check">
+            <label for="menu-btn-check" class="menu-btn"><span></span></label>
+        </div>
+        <div class="top-nav">
+            <ul>
+                <li><a href="/"><img src="/core/resource/image/MSNIC/darkMode/LOGOTYPE-d.png" alt="" style="width: 100px;"></a></li>
+                <li><a href="/" class="anchor">Home</a></li>
+                <li><a href="/#projects" class="anchor">Projects</a></li>
+                <li><a href="/#members" class="anchor">Members</a></li>
+                <li><a href="/#" class="anchor">About</a></li>
+                <li><a href="/recruit">Recruit</a></li>
+            </ul>
+            <button>Contact Us</button>
+        </div>
+    </div>
+    <div class="main">
+        <div class="slide" style="min-height: unset;">
+            <div class="slide-desc">
+                <h1></h1>
+                <p></p>
+            </div>
+            <h2>表示</h2>
+            <a href="/" class="go-top anchor">TOPへ</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.js" integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script>
+        document.getElementById('menu-btn-check').onchange = ()=>{
+            $('.top-nav').toggleClass('open');
+        }
+
+        function sleep(waitSec, callbackFunc) {
+            var spanedSec = 0;
+            var id = setInterval(function () {
+                spanedSec = spanedSec + .1;
+                if (spanedSec >= waitSec) {
+                    clearInterval(id);
+                    if (callbackFunc) callbackFunc();
+                }
+            }, 100);
+        }
+
+        $('.anchor').on('click',()=>{
+            sleep(.1,()=>{window.history.replaceState({},null,'/');})
+        });
+
+    </script>
+</body>
+</html>
